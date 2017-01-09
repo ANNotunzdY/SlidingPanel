@@ -434,14 +434,14 @@ open class SVSlidingPanelViewController: UIViewController, UIGestureRecognizerDe
     }
     
     
-    private func removeTapViewOnCenterPanelContainer() {
+    open func removeTapViewOnCenterPanelContainer() {
         
         self.tapView?.removeFromSuperview()
     }
     
     
     
-    private func addTapGestureToView(view: UIView) {
+    open func addTapGestureToView(view: UIView) {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showCenterPanel))
         view.addGestureRecognizer(tapGesture)
@@ -450,7 +450,7 @@ open class SVSlidingPanelViewController: UIViewController, UIGestureRecognizerDe
     
     //MARK: - Pan Gesture  Methods
     
-    private func addPanGestureToView(view: UIView) {
+    open func addPanGestureToView(view: UIView) {
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         panGesture.delegate = self
@@ -461,7 +461,7 @@ open class SVSlidingPanelViewController: UIViewController, UIGestureRecognizerDe
     
     
     
-    @objc private func handlePan(gesture: UIPanGestureRecognizer) {
+    @objc open func handlePan(gesture: UIPanGestureRecognizer) {
         
         if !self.shouldPanEnabledSliding {
             return
